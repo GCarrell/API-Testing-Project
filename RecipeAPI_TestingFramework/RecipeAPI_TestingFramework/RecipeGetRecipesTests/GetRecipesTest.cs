@@ -7,10 +7,19 @@ namespace RecipeAPI_TestingFramework
     
     public class GetRecipesTest
     {
+        private GRService _ReturnedRecipe = new GRService();
+
+        
         [Test]
-        public void TestMethod1()
+        public void RecipeIsVegetarianReturnsTrueBool()
         {
-            Assert.AreEqual(1, 1);
+            Assert.That(_ReturnedRecipe.CheckIfRecipeIsVegetarian());
+        }
+
+        [Test]
+        public void RecipeInstructionStepCountIs7()
+        {
+            Assert.That(_ReturnedRecipe.InstructionsStepCount(), Is.EqualTo(7));
         }
     }
 }

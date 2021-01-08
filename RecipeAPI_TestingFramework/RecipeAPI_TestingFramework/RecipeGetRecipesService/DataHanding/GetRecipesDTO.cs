@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace RecipeAPI_TestingFramework 
 { 
     class GetRecipesDTO
     {
+        public GetRecipesRoot GetSpecifiedRecipe { get; set; }
+        public void DeserialiseRecipes(string recipeResponse)
+        {
+            GetSpecifiedRecipe = JsonConvert.DeserializeObject<GetRecipesRoot>(recipeResponse);
+        }
     }
 }
