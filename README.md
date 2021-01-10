@@ -1,9 +1,8 @@
 # API Testing Project
-[TOC]
 
-## Project Overview 
+
+## Project Overview
 The aim of this project is to create a test framework for the 'Detect food in text' and 'Extract Recipe From Website' services of the 'Recipe - Food - Nutrition' API which can be found here: https://rapidapi.com/spoonacular/api/recipe-food-nutrition/endpoints. 
-
 
 
 ## Project Goals
@@ -17,7 +16,17 @@ The framework will have:
 * Readme should include instructions on possible further expansion
 * Readme should include a class diagram
 
-
+- [API Testing Project](#api-testing-project)
+  - [Project Overview ](#project-overview)
+  - [Project Goals](#project-goals)
+  - [User Guide](#user-guide)
+      - [Prerequisites](#prerequisites)
+      - [Class Diagram](#class-diagram)
+  - [Sprint Breakdowns](#sprint-breakdowns)
+    - [Sprint 1](#sprint-1)
+      - [Sprint Review](#sprint-review)
+      - [Sprint Retrospective](#sprint-retrospective)
+      - [Sprint Goals](#sprint-goals)
 
 ## User Guide
 
