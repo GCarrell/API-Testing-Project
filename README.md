@@ -1,5 +1,16 @@
 # API Testing Project
-
+## Table of Contents
+- [API Testing Project](#api-testing-project)
+  - [Project Overview ](#project-overview)
+  - [Project Goals](#project-goals)
+  - [User Guide](#user-guide)
+      - [Prerequisites](#prerequisites)
+      - [Class Diagram](#class-diagram)
+  - [Sprint Breakdowns](#sprint-breakdowns)
+    - [Sprint 1](#sprint-1)
+      - [Sprint Review](#sprint-review)
+      - [Sprint Retrospective](#sprint-retrospective)
+      - [Sprint Goals](#sprint-goals)
 
 ## Project Overview
 The aim of this project is to create a test framework for the 'Detect food in text' and 'Extract Recipe From Website' services of the 'Recipe - Food - Nutrition' API which can be found here: https://rapidapi.com/spoonacular/api/recipe-food-nutrition/endpoints. 
@@ -16,17 +27,7 @@ The framework will have:
 * Readme should include instructions on possible further expansion
 * Readme should include a class diagram
 
-- [API Testing Project](#api-testing-project)
-  - [Project Overview ](#project-overview)
-  - [Project Goals](#project-goals)
-  - [User Guide](#user-guide)
-      - [Prerequisites](#prerequisites)
-      - [Class Diagram](#class-diagram)
-  - [Sprint Breakdowns](#sprint-breakdowns)
-    - [Sprint 1](#sprint-1)
-      - [Sprint Review](#sprint-review)
-      - [Sprint Retrospective](#sprint-retrospective)
-      - [Sprint Goals](#sprint-goals)
+
 
 ## User Guide
 
@@ -159,10 +160,10 @@ Tests were added that checked the response of both the 'Get Recipes' and 'Detect
 
 * CheckIfRecipeIsVegetarian - checks if recipe is vegetarian
 * InstructionsStepCount - returns number of instructions in the recipe
-* GetNumberOfResponseBodyItems - 
-* CheckIfFoodItemIsTaggedCorrectly - 
-* CheckIfImageAttributeIsNull - 
-* CheckIfFoodItemIsAnnotatedCorrectly -  
+* GetNumberOfResponseBodyItems - Returns the number of the responded body items
+* CheckIfFoodItemIsTaggedCorrectly - Returns true if the specified food Item is tagged correctly
+* CheckIfImageAttributeIsNull - Returns True if an immage Attribute is null
+* CheckIfFoodItemIsAnnotatedCorrectly -  Returns True if the specified food Item is annotated Correctly
 
 #### Sprint Retrospective
 In terms of workload the sprint was planned well. Problems did arise with pushing and pulling with Github, with one group member pulling changes over the top of their dev branch and having to start again, this could have been countered by committing the personal dev branch to Github just to make sure there was a back-up before pulling the most recent commit.
@@ -190,7 +191,6 @@ In terms of workload the sprint was planned well. Problems did arise with pushin
   - [x] Creating a Folder that contains the test files for the "Get Recipes" API request
   - [x]  Commit changes  after the arrange is complete
   - [x] Update ReadMe
-
 
 
 
