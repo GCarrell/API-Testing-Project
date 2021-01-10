@@ -1,12 +1,14 @@
-﻿namespace RecipeAPI_TestingFramework.RecipeDetectFoodInTextService
+﻿using System;
+
+namespace RecipeAPI_TestingFramework
 {
-    class DFTService
+    public class DFTService
     {
-        FoodInTextCallManager FoodInTextCallManager { get; set; }
+        public FoodInTextCallManager FoodInTextCallManager { get; set; } = new FoodInTextCallManager();
 
-        FoodInTextDTO FoodInTextDTO { get; set; }
+        public FoodInTextDTO FoodInTextDTO { get; set; } = new FoodInTextDTO();
 
-        private string DetectedFood { get; set; }
+        public string DetectedFood { get; set; }
 
         public DFTService(string requestBody)
         {
@@ -14,5 +16,48 @@
 
             FoodInTextDTO.Desirialize(DetectedFood);
         }
+
+        public int GetNumberOfResponseBodyItems()
+        {
+            return FoodInTextDTO.FoodInTextRoot.annotations.Length;
+        }
+
+        public bool CheckIfFoodItemIsTaggedCorrectly(string foodItem, string tag)
+        {
+            bool result = false;
+            
+                foreach (var item in FoodInTextDTO.FoodInTextRoot.annotations)
+                {
+                    if (item.annotation == foodItem)
+                    {
+                       result= item.tag == tag;
+                    }
+                }
+            return result;
+        }
+
+        public bool CheckIfImageAttributeIsNull()
+        {
+            bool result = true;
+            foreach (var item in FoodInTextDTO.FoodInTextRoot.annotations)
+            {
+                result = item.image == null;
+            }
+            return result;
+        }
+        public bool CheckIfFoodItemIsAnnotatedCorrectly(string foodItemAnnotation, string tag)
+        {
+            bool result = false;
+            foreach (var item in FoodInTextDTO.FoodInTextRoot.annotations)
+            {
+                if (item.tag == tag)
+                {
+                    result = item.annotation == foodItemAnnotation;
+                }
+            }
+            return result;
+        }
+
+
     }
 }

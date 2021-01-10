@@ -1,7 +1,7 @@
 ﻿using RestSharp;
 namespace RecipeAPI_TestingFramework
 {
-    class FoodInTextCallManager
+    public class FoodInTextCallManager
     {
         private RestClient Client = new RestClient();
         public string GetDetectedFood(string requestBody)

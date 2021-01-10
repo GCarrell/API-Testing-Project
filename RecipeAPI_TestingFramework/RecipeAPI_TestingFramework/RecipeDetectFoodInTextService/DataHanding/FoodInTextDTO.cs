@@ -2,9 +2,9 @@
 
 namespace RecipeAPI_TestingFramework
 {
-    class FoodInTextDTO
+    public class FoodInTextDTO
     {
-        FoodInTextRoot FoodInTextRoot { get; set; }
+        public FoodInTextRoot FoodInTextRoot { get; set; }
         public void Desirialize(string detectedFood)
         {
             FoodInTextRoot = JsonConvert.DeserializeObject<FoodInTextRoot>(detectedFood);
