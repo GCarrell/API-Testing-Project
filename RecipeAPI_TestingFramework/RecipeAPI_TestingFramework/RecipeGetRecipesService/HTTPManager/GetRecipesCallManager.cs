@@ -18,7 +18,7 @@ namespace RecipeAPI_TestingFramework
         {
             var request = new RestRequest("/recipes/extract");
             request.AddHeader("x-rapidapi-key", RecipeConfigReader.APIKey);
-            request.AddParameter("url", "https://www.melskitchencafe.com/the-best-fudgy-brownies");
+            request.AddParameter("url", RecipeConfigReader.TestSourceUrl);
             var response = _client.Get(request);
 
             return response.Content;
