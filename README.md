@@ -135,7 +135,8 @@ public void RecipeInstructionStepCountIs7()
 
 #### Class Diagram
 
-![](https://github.com/GCarrell\API-Testing-Project\RecipeAPI_TestingFramework\RecipeAPI_TestingFramework\Images\ClassDiagram.png)
+![Class Diagram](https://github.com/GCarrell/API-Testing-Project/blob/dev/RecipeAPI_TestingFramework/RecipeAPI_TestingFramework/Images/ClassDiagram.png)
+
 
 
 
