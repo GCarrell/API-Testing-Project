@@ -33,7 +33,71 @@ This key must be placed in app.config file in the following line.
 
 #### Detect Food In Text
 
-Detect Food In Text is a POST call that returns all the ingredients and dishes contained in a request -----
+Detect Food In Text is a POST call that returns all the ingredients and dishes contained in a request 
+
+In order for this request to be feasible you need to  
+
+1. Instantiate a new RestRequest with the request URL and the request method. 
+
+   1. Example
+
+      ```csharp
+      var request = new RestRequest(RecipeConfigReader.BaseUrl+ "/food/detect", Method.POST);
+      ```
+
+
+2. Add a header that includes your API key that you obtained earlier From RapidApi. [See Prerequisites](####Prerequisites)  
+
+   1. Example:
+
+      ```csharp
+      request.AddHeader("x-rapidapi-key",RecipeConfigReader.APIKey);
+      ```
+
+      
+
+3. Optional: Add a Header that specifies the content type of the body request
+
+   1. Example
+
+      ```csharp
+      request.AddHeader("content-type", "application/x-www-form-urlencoded")
+      ```
+
+1. Add a body parameter of type: application/x-www-form-urlencoded
+   1. Example:
+   
+        ```csharp 
+        string exampleRequestBody ="text=This is an Example Food Dish and an Example Food Ingredient"
+        request.AddParameter("application/x-www-form-urlencoded", exampleRequestBody, ParameterType.RequestBody})
+        ```
+
+
+Detect Food In Text Full Post Request Example:
+
+```csharp
+ private RestClient Client = new RestClient();
+        public string GetDetectedFood(string requestBody)
+        {
+            var request = new RestRequest(RecipeConfigReader.BaseUrl+ "/food/detect", Method.POST);
+
+            request.AddHeader("x-rapidapi-key",RecipeConfigReader.APIKey);
+            request.AddHeader("content-type", "application/x-www-form-urlencoded");
+
+            request.AddParameter("application/x-www-form-urlencoded", requestBody,ParameterType.RequestBody);
+            var requestContent= Client.Execute(request);
+
+            return requestContent.Content;
+        }
+```
+
+In order to create new Tests, in your Test Classes, before creating your Test Cases, you sould instantiate a new DFTService and pass to the constructor the string representing the body of the request that you want to test.
+
+Example:
+
+```csharp
+DFTService DFTService = new DFTService("text=I would love to have a pizza with some mushrooms");
+```
 
 #### Get Recipes
 
