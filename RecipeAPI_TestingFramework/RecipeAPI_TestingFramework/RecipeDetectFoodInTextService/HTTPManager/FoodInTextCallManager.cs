@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using RestSharp;
 namespace RecipeAPI_TestingFramework
 {
-    class FoodInTextCallManager
+    public class FoodInTextCallManager
     {
+        private RestClient Client = new RestClient();
+        public string GetDetectedFood(string requestBody)
+        {
+            var request = new RestRequest(RecipeConfigReader.BaseUrl+ "/food/detect", Method.POST);
+
+            request.AddHeader("x-rapidapi-key",RecipeConfigReader.APIKey);
+            request.AddHeader("content-type", "application/x-www-form-urlencoded");
+
+            request.AddParameter("application/x-www-form-urlencoded", requestBody,ParameterType.RequestBody);
+            var requestContent= Client.Execute(request);
+
+            return requestContent.Content;
+        }
     }
 }
